@@ -1,0 +1,14 @@
+<button (click)="signIn()" *ngIf="user == null">GOOGLE SIGNIN</button>
+<button (click)="signOut()" *ngIf="user !== null">GOOGLE SIGNOUT</button>
+<div *ngIf="user != null">
+  <div>
+    you are signed in with Google {{ user.getBasicProfile().getName() }}
+  </div>
+</div>
+
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/character">character</a></li>
+</ul>
+
+<router-outlet></router-outlet>
